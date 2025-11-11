@@ -187,14 +187,14 @@ JS Plugins (per component)   Data API (HTML attributes)
 
 ## Comparing Behaviors: jQuery vs Vanilla
 
-| Concern | Bootstrap 4 Approach | Bootstrap 5 Approach | Migration Tip |
-| --- | --- | --- | --- |
-| Initialization | `$('.modal').modal()` | `Modal.getOrCreateInstance(element)` or data attributes | Import the class from `bootstrap/js/dist/modal` and call methods directly. |
-| Event binding | `$('.modal').on('show.bs.modal', fn)` | `element.addEventListener('show.bs.modal', fn)` | Keep event names, swap to native listeners. |
-| Data attributes | `data-toggle`, `data-target` | `data-bs-toggle`, `data-bs-target` | Update attribute names; values stay the same. |
-| Plugin options | Pass object to jQuery plugin | Use constructor options or `data-bs-*` attributes | Move options into native constructor or HTML attributes. |
-| Popper dependency | Bundled Popper v1 | Peer dependency `@popperjs/core` | Install Popper when tooltips, popovers, or dropdowns are used. |
-| No-conflict | `$.fn.modal.noConflict()` | Not needed | Remove noConflict calls because there is no jQuery bridge. |
+| Concern           | Bootstrap 4 Approach                  | Bootstrap 5 Approach                                    | Migration Tip                                                              |
+| ----------------- | ------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Initialization    | `$('.modal').modal()`                 | `Modal.getOrCreateInstance(element)` or data attributes | Import the class from `bootstrap/js/dist/modal` and call methods directly. |
+| Event binding     | `$('.modal').on('show.bs.modal', fn)` | `element.addEventListener('show.bs.modal', fn)`         | Keep event names, swap to native listeners.                                |
+| Data attributes   | `data-toggle`, `data-target`          | `data-bs-toggle`, `data-bs-target`                      | Update attribute names; values stay the same.                              |
+| Plugin options    | Pass object to jQuery plugin          | Use constructor options or `data-bs-*` attributes       | Move options into native constructor or HTML attributes.                   |
+| Popper dependency | Bundled Popper v1                     | Peer dependency `@popperjs/core`                        | Install Popper when tooltips, popovers, or dropdowns are used.             |
+| No-conflict       | `$.fn.modal.noConflict()`             | Not needed                                              | Remove noConflict calls because there is no jQuery bridge.                 |
 
 ## Internal Utilities Worth Knowing (Bootstrap 5)
 

@@ -163,12 +163,12 @@
 
 ## Problems Solved vs. Problems Introduced
 
-| Version | Primary Problems Solved | New Challenges or Trade-offs |
-| --- | --- | --- |
-| 1.x | Standardized UI kits, faster prototyping, shared design language. | Heavy jQuery reliance, difficult responsive tweaks, LESS setup barrier. |
-| 2.x | Responsive utilities, iconography, richer components. | Class bloat, legacy browser hacks, non-mobile-first defaults. |
-| 3.x | Mobile-first grid, flatter design, Sass customization. | Float limitations, limited RTL support, customization required recompiles. |
-| 4.x | Flexbox grid, utility-first tooling, modern components. | Long upgrade path, lingering jQuery dependency, IE11 quirks. |
-| 5.x | Dependency-light JS, CSS variables, RTL support, better accessibility. | No IE support, migration complexity, potential utility overuse, Popper dependency for advanced overlays. |
+| Version | Primary Problems Solved                                                | New Challenges or Trade-offs                                                                             |
+| ------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 1.x     | Standardized UI kits, faster prototyping, shared design language.      | Heavy jQuery reliance, difficult responsive tweaks, LESS setup barrier.                                  |
+| 2.x     | Responsive utilities, iconography, richer components.                  | Class bloat, legacy browser hacks, non-mobile-first defaults.                                            |
+| 3.x     | Mobile-first grid, flatter design, Sass customization.                 | Float limitations, limited RTL support, customization required recompiles.                               |
+| 4.x     | Flexbox grid, utility-first tooling, modern components.                | Long upgrade path, lingering jQuery dependency, IE11 quirks.                                             |
+| 5.x     | Dependency-light JS, CSS variables, RTL support, better accessibility. | No IE support, migration complexity, potential utility overuse, Popper dependency for advanced overlays. |
 
 Understanding these trade-offs helps teams decide when to upgrade and how much effort to budget for refactoring layouts, JavaScript, and theming as Bootstrap continues to evolve.

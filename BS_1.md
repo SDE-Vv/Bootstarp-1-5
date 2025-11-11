@@ -10,13 +10,13 @@
 - **Library:** A collection of focused functions or components you call when needed. It does not impose overall structure; you stay in control. Examples include jQuery, Lodash, or Chart.js.
 - **Key difference:** Control flow. Frameworks provide an "inversion of control" (the framework orchestrates the app), while libraries hand you tools you invoke on demand.
 
-| Criteria | Framework | Library | Example |
-| --- | --- | --- | --- |
-| Who controls the flow? | Framework manages the overall structure and calls your code at the right time. | You call library functions whenever you need them. | Angular decides when your component runs vs jQuery functions you call manually. |
-| Setup effort | Usually higher: you follow project structure, CLI tools, configuration. | Lower: drop in a script or import a module. | React CLI sets up routing and build steps; Lodash can be imported in a single line. |
-| Opinionated design | High: provides patterns for layout, state handling, deployment. | Low: focuses on solving a specific problem without dictating app architecture. | Symfony enforces MVC patterns; Chart.js only draws charts. |
-| Replacement cost | Harder to swap because it shapes your whole app. | Easier, since libraries are modular pieces. | Migrating off Angular means rewriting structure; replacing Axios with Fetch is simpler. |
-| Bootstrap fit | Offers layout, components, utilities, and JS behaviors that guide your markup—works like a framework. | When you cherry-pick Sass partials or single JS modules, you are using it like a library. | Full Bootstrap CDN vs importing only `bootstrap/js/dist/modal`. |
+| Criteria               | Framework                                                                                             | Library                                                                                   | Example                                                                                 |
+| ---------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Who controls the flow? | Framework manages the overall structure and calls your code at the right time.                        | You call library functions whenever you need them.                                        | Angular decides when your component runs vs jQuery functions you call manually.         |
+| Setup effort           | Usually higher: you follow project structure, CLI tools, configuration.                               | Lower: drop in a script or import a module.                                               | React CLI sets up routing and build steps; Lodash can be imported in a single line.     |
+| Opinionated design     | High: provides patterns for layout, state handling, deployment.                                       | Low: focuses on solving a specific problem without dictating app architecture.            | Symfony enforces MVC patterns; Chart.js only draws charts.                              |
+| Replacement cost       | Harder to swap because it shapes your whole app.                                                      | Easier, since libraries are modular pieces.                                               | Migrating off Angular means rewriting structure; replacing Axios with Fetch is simpler. |
+| Bootstrap fit          | Offers layout, components, utilities, and JS behaviors that guide your markup—works like a framework. | When you cherry-pick Sass partials or single JS modules, you are using it like a library. | Full Bootstrap CDN vs importing only `bootstrap/js/dist/modal`.                         |
 
 ## Bootstrap As a Framework
 
@@ -69,6 +69,9 @@ To start using Bootstrap in your project, you can:
 Example (CDN method):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 ```

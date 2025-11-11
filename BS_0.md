@@ -6,12 +6,12 @@ This file orients you before diving into the deeper Bootstrap notes in the rest 
 
 ## Map of the Series
 
-| File | Focus |
-| --- | --- |
-| `BS_1.md` | What Bootstrap is, why it matters, and how it compares to other tooling. |
-| `BS_2.md` | History and evolution so you understand the design decisions behind each release. |
-| `...` | Intermediate notes (`BS_3.md`–`BS_5.md`) cover grids, components, and production checklists. |
-| `BS_6.md` | Capstone exercises and interview-style questions (reviewed annually). |
+| File      | Focus                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------- |
+| `BS_1.md` | What Bootstrap is, why it matters, and how it compares to other tooling.                     |
+| `BS_2.md` | History and evolution so you understand the design decisions behind each release.            |
+| `...`     | Intermediate notes (`BS_3.md`–`BS_5.md`) cover grids, components, and production checklists. |
+| `BS_6.md` | Capstone exercises and interview-style questions (reviewed annually).                        |
 
 Read `BS_1.md` next if you want the conceptual overview before touching code. The mid-series files (`BS_3.md` through `BS_5.md`) go deeper into implementation details when you are ready.
 
@@ -42,13 +42,16 @@ Choose one of these setups for hands-on practice:
 
 ### 1. CDN Quick Start
 
-```html
+````html
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css"
+    />
     <title>Bootstrap Lab</title>
   </head>
   <body class="p-4">
@@ -56,94 +59,74 @@ Choose one of these setups for hands-on practice:
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
----
-
-Use these navigation buttons to jump between sections:
-
-[< Back to index](index.html) | [Forward to BS_1 >](BS_1.md)
-
-Then wire `vite.config.js` to process Sass and import only the components you need. This path keeps bundles lean and mirrors production workflows.
-
----
-
-## Study Workflow
-
-- Skim the theory in `BS_1.md` and `BS_2.md` to ground your mental model.
-- Recreate examples from the docs, then strip them back to understand which classes are essential.
-- Practice translating plain HTML mockups into responsive layouts using the grid and utility APIs.
-- After each session, write down one limitation or annoyance you hit; check `BS_3.md` or official docs for solutions.
-
----
-
-## Practice Ideas
-
-- Clone a simple landing page from Dribbble or Behance with only Bootstrap classes and minimal custom CSS; note where utilities fall short.
-- Build a component library page showcasing cards, navbars, forms, and modals with toggles for light/dark themes.
-- Attempt a no-framework rebuild using vanilla CSS to appreciate what Bootstrap automates for you.
-
----
-
-## How to Write a README.md
-
-Use this checklist when crafting a project README so newcomers can onboard quickly:
-
-1. **Title and Elevator Pitch**
-
-  ```markdown
-  # Project Name
-
-  One or two sentences explaining what the project does and why it exists.
-  ```
+--- Use these navigation buttons to jump between sections: [< Back to
+index](index.html) | [Forward to BS_1 >](BS_1.md) Then wire `vite.config.js` to
+process Sass and import only the components you need. This path keeps bundles
+lean and mirrors production workflows. --- ## Study Workflow - Skim the theory
+in `BS_1.md` and `BS_2.md` to ground your mental model. - Recreate examples from
+the docs, then strip them back to understand which classes are essential. -
+Practice translating plain HTML mockups into responsive layouts using the grid
+and utility APIs. - After each session, write down one limitation or annoyance
+you hit; check `BS_3.md` or official docs for solutions. --- ## Practice Ideas -
+Clone a simple landing page from Dribbble or Behance with only Bootstrap classes
+and minimal custom CSS; note where utilities fall short. - Build a component
+library page showcasing cards, navbars, forms, and modals with toggles for
+light/dark themes. - Attempt a no-framework rebuild using vanilla CSS to
+appreciate what Bootstrap automates for you. --- ## How to Write a README.md Use
+this checklist when crafting a project README so newcomers can onboard quickly:
+1. **Title and Elevator Pitch** ```markdown # Project Name One or two sentences
+explaining what the project does and why it exists.
+````
 
 1. **Table of Contents (Optional for short projects)**
 
-  ```markdown
-  ## Table of Contents
+```markdown
+## Table of Contents
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  ```
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+```
 
 1. **Installation**
 
-  ```markdown
-  ## Installation
+```markdown
+## Installation
 
-  git clone https://github.com/username/project.git
-  cd project
-  npm install
-  ```
+git clone https://github.com/username/project.git
+cd project
+npm install
+```
 
 1. **Usage Examples**
 
-  ```markdown
-  ## Usage
+```markdown
+## Usage
 
-  npm start
-  ```
+npm start
+```
 
 1. **Screenshots or Demos** (optional but persuasive)
 
-  ```markdown
-  ![Screenshot](https://via.placeholder.com/400x200)
-  ```
+```markdown
+![Screenshot](https://via.placeholder.com/400x200)
+```
 
 1. **Contributing Guidelines**
 
-  ```markdown
-  ## Contributing
+```markdown
+## Contributing
 
-  Fork the repo, create a feature branch, and open a Pull Request when ready.
-  ```
+Fork the repo, create a feature branch, and open a Pull Request when ready.
+```
 
 1. **License**
 
-  ```markdown
-  ## License
+```markdown
+## License
 
-  MIT License
-  ```
+MIT License
+```
 
 Keep the tone friendly, link out to deeper docs, and surface build/test commands prominently so collaborators can get productive fast.
 
