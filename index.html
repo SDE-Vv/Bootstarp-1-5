@@ -13,6 +13,8 @@
             --sidebar-min-width: 180px;
             --sidebar-max-width: 520px;
             --header-height: 0px;
+            --loader-overlay: rgba(246, 248, 250, 0.78);
+            --loader-border: rgba(15, 23, 42, 0.2);
         }
         *,
         *::before,
@@ -207,6 +209,7 @@
             font-size: 1rem;
             max-width: min(960px, 100%);
             margin: 0 auto;
+            position: relative;
         }
         #pager {
             grid-column: 3;
@@ -356,6 +359,36 @@
             padding-left: 0.25rem !important;
             padding-right: 0.25rem !important;
         }
+        #content.is-loading {
+            pointer-events: none;
+        }
+        #content.is-loading::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: var(--loader-overlay);
+            z-index: 1;
+            backdrop-filter: blur(2px);
+        }
+        #content.is-loading::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 44px;
+            height: 44px;
+            margin: -22px 0 0 -22px;
+            border-radius: 50%;
+            border: 3px solid var(--loader-border);
+            border-top-color: var(--accent-color);
+            animation: content-spinner 0.75s linear infinite;
+            z-index: 2;
+        }
+        @keyframes content-spinner {
+            to {
+                transform: rotate(360deg);
+            }
+        }
         .light-theme {
             color-scheme: light;
             --bg-color: #ffffff;
@@ -376,6 +409,8 @@
             --blockquote-color: #424a53;
             --table-header-bg: #eef2fc;
             --table-row-alt-bg: #f9fafb;
+            --loader-overlay: rgba(255, 255, 255, 0.82);
+            --loader-border: rgba(15, 23, 42, 0.18);
         }
         .dark-theme {
             color-scheme: dark;
@@ -397,6 +432,8 @@
             --blockquote-color: #9ebdfb;
             --table-header-bg: rgba(56, 139, 253, 0.2);
             --table-row-alt-bg: rgba(255, 255, 255, 0.02);
+            --loader-overlay: rgba(13, 17, 23, 0.7);
+            --loader-border: rgba(255, 255, 255, 0.25);
         }
         @media (max-width: 768px) {
             main {
@@ -559,6 +596,7 @@
         let currentFileIndex = 0;
         let isDragging = false;
         let isDownloadMenuOpen = false;
+    let currentRenderToken = 0;
 
         const getCurrentFilename = () => {
             const fallback = files[0] || "note.md";
@@ -760,19 +798,32 @@
                 currentFileIndex = index;
                 updatePager();
             }
+            const requestToken = ++currentRenderToken;
+            content.classList.add("is-loading");
+            content.setAttribute("aria-busy", "true");
             try {
                 const response = await fetch(filename);
                 if (!response.ok) {
                     throw new Error(`Failed to load ${filename}`);
                 }
                 const text = await response.text();
+                if (requestToken !== currentRenderToken) {
+                    return;
+                }
                 content.innerHTML = marked.parse(text);
                 enhanceTables();
                 setActiveButton(filename);
                 runHighlighting();
                 requestAnimationFrame(resetScrollPosition);
             } catch (error) {
-                content.innerHTML = `<p>Unable to load <code>${filename}</code>.</p>`;
+                if (requestToken === currentRenderToken) {
+                    content.innerHTML = `<p>Unable to load <code>${filename}</code>.</p>`;
+                }
+            } finally {
+                if (requestToken === currentRenderToken) {
+                    content.classList.remove("is-loading");
+                    content.removeAttribute("aria-busy");
+                }
             }
         };
 
