@@ -59,23 +59,6 @@ Choose one of these setups for hands-on practice:
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
---- Use these navigation buttons to jump between sections: [< Back to
-index](index.html) | [Forward to BS_1 >](BS_1.md) Then wire `vite.config.js` to
-process Sass and import only the components you need. This path keeps bundles
-lean and mirrors production workflows. --- ## Study Workflow - Skim the theory
-in `BS_1.md` and `BS_2.md` to ground your mental model. - Recreate examples from
-the docs, then strip them back to understand which classes are essential. -
-Practice translating plain HTML mockups into responsive layouts using the grid
-and utility APIs. - After each session, write down one limitation or annoyance
-you hit; check `BS_3.md` or official docs for solutions. --- ## Practice Ideas -
-Clone a simple landing page from Dribbble or Behance with only Bootstrap classes
-and minimal custom CSS; note where utilities fall short. - Build a component
-library page showcasing cards, navbars, forms, and modals with toggles for
-light/dark themes. - Attempt a no-framework rebuild using vanilla CSS to
-appreciate what Bootstrap automates for you. --- ## How to Write a README.md Use
-this checklist when crafting a project README so newcomers can onboard quickly:
-1. **Title and Elevator Pitch** ```markdown # Project Name One or two sentences
-explaining what the project does and why it exists.
 ````
 
 1. **Table of Contents (Optional for short projects)**
